@@ -1,3 +1,4 @@
+const path = require('path');
 const { RemoteBrowserTarget } = require('happo.io');
 
 const { HAPPO_API_KEY: apiKey, HAPPO_API_SECRET: apiSecret } = process.env;
@@ -25,5 +26,7 @@ module.exports = {
   targets: {
     chrome: new RemoteBrowserTarget('chrome', { viewport: '800x600' }),
   },
+
+  renderWrapperModule: path.resolve(__dirname, 'src/renderWrapper.tsx'),
   include: '**/@(*-happo|happo).@(ts|tsx)',
 };
