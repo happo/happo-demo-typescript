@@ -3029,9 +3029,13 @@ handlebars@^4.0.3:
   optionalDependencies:
     uglify-js "^3.1.4"
 
-happo.io@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.npmjs.org/happo.io/-/happo.io-3.1.0.tgz#9d8ab6f47b46b1fddd8b47b7fd8c950ded6136f4"
+happo-plugin-typescript@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/happo-plugin-typescript/-/happo-plugin-typescript-1.0.0.tgz#2043588c18e3fb1f1c2c7e7e6c6c78780a59ddd9"
+
+happo.io@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.npmjs.org/happo.io/-/happo.io-3.2.0.tgz#138272f4ba68d91c686dc09bd7c43f2d5a3b2b59"
   dependencies:
     babel-plugin-dynamic-import-node "^2.1.0"
     babel-polyfill "^6.26.0"

@@ -1,5 +1,6 @@
 const path = require('path');
 const { RemoteBrowserTarget } = require('happo.io');
+const happoPluginTypescript = require('happo-plugin-typescript');
 
 const { HAPPO_API_KEY: apiKey, HAPPO_API_SECRET: apiSecret } = process.env;
 
@@ -7,26 +8,12 @@ module.exports = {
   apiKey,
   apiSecret,
 
-  customizeWebpackConfig: config => {
-    config.module.rules.push({
-      test: /\.(ts|tsx)$/,
-      use: [
-        {
-          loader: 'ts-loader',
-        },
-      ],
-    });
-    config.resolve = Object.assign({}, config.resolve, {
-      extensions: ['.tsx', '.ts', '.js'],
-    }); // add in the existing config.resolve that happo needs
-
-    return config;
-  },
-
   targets: {
     chrome: new RemoteBrowserTarget('chrome', { viewport: '800x600' }),
   },
 
+  plugins: [
+    happoPluginTypescript(),
+  ],
   renderWrapperModule: path.resolve(__dirname, 'src/renderWrapper.tsx'),
-  include: '**/@(*-happo|happo).@(ts|tsx)',
 };
